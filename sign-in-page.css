@@ -1,0 +1,212 @@
+.sign-in-page-container {
+  min-height: 100vh;
+}
+.sign-in-page-view-sign-in-page {
+  width: 100%;
+  height: 840px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+}
+.sign-in-page-text {
+  top: 122px;
+  left: 651px;
+  color: var(--dl-color-default-green);
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 48px;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.sign-in-page-inputfield-filled-off {
+  top: 219px;
+  left: 121px;
+  width: 1181px;
+  height: 74px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.sign-in-page-text02 {
+  color: var(--dl-color-default-black);
+  height: auto;
+  font-size: 14px;
+  align-self: auto;
+  font-style: Regular;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: 22px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 4px;
+  text-decoration: none;
+}
+.sign-in-page-text-input {
+  color: rgba(0, 0, 0, 1);
+  width: 1181px;
+  height: 48px;
+  display: flex;
+  padding: 12px;
+  position: relative;
+  font-size: 16px;
+  align-self: stretch;
+  text-align: left;
+  align-items: center;
+  flex-shrink: 0;
+  font-family: Inter;
+  font-weight: 400;
+  border-color: rgba(0, 0, 0, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 6px;
+  background-color: var(--dl-color-default-white);
+}
+.sign-in-page-button-primary-off-off {
+  top: 517px;
+  left: 492px;
+  width: 173px;
+  display: flex;
+  padding: 13px 24px;
+  overflow: hidden;
+  position: absolute;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: transparent;
+  border-radius: 6px;
+  justify-content: center;
+  background-color: var(--dl-color-default-green);
+}
+.sign-in-page-text04 {
+  color: rgba(238, 241, 244, 1);
+  height: auto;
+  font-size: 16px;
+  align-self: auto;
+  font-style: Bold;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: 22px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.sign-in-page-inputfield-filled-off1 {
+  top: 346px;
+  left: 120px;
+  width: 1181px;
+  height: 74px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.sign-in-page-text06 {
+  color: var(--dl-color-default-black);
+  height: auto;
+  font-size: 14px;
+  align-self: auto;
+  font-style: Regular;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: 22px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 4px;
+  text-decoration: none;
+}
+.sign-in-page-text-input1 {
+  color: rgba(0, 0, 0, 1);
+  width: 100%;
+  height: 48px;
+  display: flex;
+  padding: 12px;
+  position: relative;
+  font-size: 16px;
+  align-self: stretch;
+  text-align: left;
+  align-items: center;
+  flex-shrink: 0;
+  font-family: Inter;
+  font-weight: 400;
+  border-color: rgba(0, 0, 0, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 6px;
+  background-color: var(--dl-color-default-white);
+}
+.sign-in-page-button-primary-off-off1 {
+  top: 516px;
+  left: 821px;
+  width: 173px;
+  height: 50px;
+  display: flex;
+  padding: 13px 24px;
+  overflow: hidden;
+  position: absolute;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: transparent;
+  border-radius: 6px;
+  justify-content: center;
+  background-color: var(--dl-color-default-green);
+}
+.sign-in-page-text07 {
+  color: var(--dl-color-default-white);
+  height: auto;
+  font-size: 16px;
+  align-self: auto;
+  font-style: Bold;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: 22px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.sign-in-page-text09 {
+  top: 596px;
+  left: 621px;
+  color: rgba(148, 178, 2, 1);
+  width: 270px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  align-self: auto;
+  font-style: Medium;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: 22px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: underline;
+}
+.sign-in-page-moni-crop11 {
+  top: 29px;
+  right: 35px;
+  width: 175px;
+  height: 175px;
+  position: absolute;
+  border-color: transparent;
+}
+
+.child {
+  flex: 1 !important;
+}

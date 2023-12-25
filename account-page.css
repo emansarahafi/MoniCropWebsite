@@ -1,0 +1,137 @@
+.account-page-container {
+  min-height: 100vh;
+}
+.account-page-view-account-page {
+  width: 100%;
+  height: 840px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+}
+.account-page-button-primary-off-off {
+  top: 481px;
+  left: 557px;
+  width: 337px;
+  height: 45px;
+  display: flex;
+  padding: 13px 24px;
+  overflow: hidden;
+  position: absolute;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: transparent;
+  border-radius: 6px;
+  justify-content: center;
+  background-color: var(--dl-color-default-green);
+}
+.account-page-text {
+  color: var(--dl-color-default-white);
+  height: auto;
+  font-size: 16px;
+  align-self: auto;
+  font-style: Bold;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: 22px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.account-page-button-primary-off-off1 {
+  top: 557px;
+  left: 556px;
+  width: 337px;
+  height: 45px;
+  display: flex;
+  padding: 13px 24px;
+  overflow: hidden;
+  position: absolute;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: transparent;
+  border-radius: 6px;
+  justify-content: center;
+  background-color: var(--dl-color-default-green);
+}
+.account-page-text02 {
+  color: var(--dl-color-default-white);
+  height: auto;
+  font-size: 16px;
+  align-self: auto;
+  font-style: Bold;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: 22px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.account-page-button-primary-off-off2 {
+  top: 633px;
+  left: 559px;
+  width: 337px;
+  height: 45px;
+  display: flex;
+  padding: 13px 24px;
+  overflow: hidden;
+  position: absolute;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: transparent;
+  border-radius: 6px;
+  justify-content: center;
+  background-color: var(--dl-color-default-green);
+}
+.account-page-text04 {
+  color: var(--dl-color-default-white);
+  height: auto;
+  font-size: 16px;
+  align-self: auto;
+  font-style: Bold;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: 22px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.account-page-text06 {
+  top: 110px;
+  left: 628px;
+  color: var(--dl-color-default-green);
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 48px;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.account-page-text08 {
+  top: 262px;
+  left: 592px;
+  color: var(--dl-color-default-green);
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 36px;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.account-page-moni-crop12 {
+  top: 2px;
+  left: 13px;
+  width: 207px;
+  height: 181px;
+  position: absolute;
+  border-color: transparent;
+}

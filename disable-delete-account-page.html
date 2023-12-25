@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <title>Forgot Your Password?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    
+    <script>
+      // Firebase configuration
+      const firebaseConfig = {
+        apiKey: "INSERT_API_KEY_HERE",
+        authDomain: "INSERT_AUTH_DOMAIN_HERE",
+        projectId: "INSERT_PROJECT_ID_HERE",
+        storageBucket: "INSERT_STORAGE_BUCKET_HERE",
+        messagingSenderId: "INSERT_MESSAGING_SENDER_ID_HERE",
+        appId: "INSERT_APP_ID_HERE",
+        measurementId: "INSERT_MEASUREMENT_ID_HERE"
+      };
+    
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    
+      // Sign up with email and password
+      function logout() {
+        firebase.auth().signOut()
+          .then(() => {
+            // Redirect to another page after sign out
+            window.location.href = "http://localhost/MoniCrop/landing-page.html";
+          })
+          .catch(error => {
+            // Handle errors
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorCode, errorMessage);
+          });
+      }
+    
+      // Get a reference to the Firebase Authentication service
+      const auth = firebase.auth();
+    
+      function handleAccountOption() {
+        // Get the user's selection
+        const selection = document.querySelector('input[name="account-option"]:checked').value;
+    
+        // Get the user's password
+        const password = document.querySelector('#password-input').value;
+    
+        // Get the authenticated user
+        const user = auth.currentUser;
+    
+        // Reauthenticate the user with their password
+        const credential = firebase.auth.EmailAuthProvider.credential(user.email, password);
+        user.reauthenticateWithCredential(credential)
+          .then(() => {
+            // User successfully reauthenticated
+    
+            // Delete or disable the user's account based on their selection
+            if (selection === 'delete') {
+              user.delete()
+                .then(() => {
+                  console.log('User deleted successfully');
+                  // Redirect to the home page or log the user out
+                  firebase.auth().signOut().then(() => {
+                    // Sign-out successful
+                    window.location.href = "http://localhost/MoniCrop/landing-page.html";
+                  }).catch((error) => {
+                    // An error happened
+                    console.log(error);
+                  });
+                })
+                .catch((error) => {
+                  console.log('Error deleting user:', error);
+                });
+            } else if (selection === 'disable') {
+              user.updateProfile({
+                disabled: true
+              })
+                .then(() => {
+                  console.log('User disabled successfully');
+                  // Redirect to the home page or log the user out
+                  firebase.auth().signOut().then(() => {
+                    // Sign-out successful
+                    window.location.href = "http://localhost/MoniCrop/landing-page.html";
+                  }).catch((error) => {
+                    // An error happened
+                    console.log(error);
+                  });
+                })
+                .catch((error) => {
+                  console.log('Error disabling user:', error);
+                });
+            }
+          })
+          .catch((error) => {
+            console.log('Error reauthenticating user:', error);
+          });
+      }
+    </script>
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div>
+      <link href="./disable-delete-account-page.css" rel="stylesheet" />
+
+      <div class="disable-delete-account-page-container">
+        <div class="disable-delete-account-page-view-disable-delete-account-page">
+          <a class="child" href="http://localhost/MoniCrop/search-results-page.html">
+            <img
+            alt="Iconssearch1255"
+            src="public/playground_assets/iconssearch1255-o6624.svg"
+            class="disable-delete-account-page-iconssearch" />
+          </a>
+          <a class="child" href="http://localhost/MoniCrop/account-page.html">
+            <img
+            alt="Iconsuser1255"
+            src="public/playground_assets/iconsuser1255-9fzb.svg"
+            class="disable-delete-account-page-iconsuser" />
+          </a>
+          <a class="child" href="http://localhost/MoniCrop/customer-feedback-page.html">
+            <img
+            alt="Iconsfrown1255"
+            src="public/playground_assets/iconsfrown1255-c1c.svg"
+            class="disable-delete-account-page-iconsfrown" />
+          </a>
+          <a class="child" href="#" onclick="logout()">
+            <img
+              alt="Iconslogout1255"
+              src="public/playground_assets/iconslogout1255-70h.svg"
+              class="disable-delete-account-page-iconslogout"
+            />
+          </a>
+          <img
+            alt="MoniCrop161255"
+            src="public/playground_assets/monicrop161255-iv0b-300w.png"
+            class="disable-delete-account-page-moni-crop16"
+          />
+          <span class="disable-delete-account-page-text H1">
+            <span>Disable / Delete Account</span>
+          </span>
+          <button onclick="window.location.href='http://localhost/MoniCrop/main-page.html'" class="disable-delete-account-page-button-primary-off-off">
+            <span class="disable-delete-account-page-text02">
+              <span>Back to Main Page</span>
+            </span>
+          </button>
+          
+          <button class="disable-delete-account-page-button-primary-off-off1" onclick="handleAccountOption()">
+            <span class="disable-delete-account-page-text04">
+              <span>Submit</span>
+            </span>
+          </button>
+          <label class="disable-delete-account-page-radiobutton-state2">
+            <input type="radio" name="account-option" value="delete">
+            Delete
+          </label>
+          <label class="disable-delete-account-page-radiobutton-state21">
+            <input type="radio" name="account-option" value="disable">
+            Disable
+          </label>
+          <div class="disable-delete-account-page-inputfield-filled-on">
+            <span class="disable-delete-account-page-text06">
+              <span>Please enter the password to confirm:</span>
+            </span>
+            <div class="disable-delete-account-page-text-input">
+              <span class="disable-delete-account-page-text08">
+                <input 
+                  type="password" 
+                  placeholder="Input text" 
+                  class="edit-account-page-text-input8" 
+                  id="password-input"
+                >
+              </span>
+            </div>
+          </div>
+          <span class="disable-delete-account-page-text10">
+            <span>Choose an option:</span>
+          </span>
+          <span class="disable-delete-account-page-text15 Body">
+            <span>
+              <span>Kindly note that if you choose:</span>
+              <br />
+              <span>
+                Disable: The account will be disabled &amp; the user can
+                reactivate it at any moment by logging again.
+              </span>
+              <br />
+              <span>
+                Delete: The account will be deleted instantly.
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

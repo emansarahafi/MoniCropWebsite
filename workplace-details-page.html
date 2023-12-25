@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <title>Workplace Details</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script type = "module">
+      import {getFirestore} from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
+
+      // Firebase configuration
+      const firebaseConfig = {
+        apiKey: "INSERT_API_KEY_HERE",
+        authDomain: "INSERT_AUTH_DOMAIN_HERE",
+        projectId: "INSERT_PROJECT_ID_HERE",
+        storageBucket: "INSERT_STORAGE_BUCKET_HERE",
+        messagingSenderId: "INSERT_MESSAGING_SENDER_ID_HERE",
+        appId: "INSERT_APP_ID_HERE",
+        measurementId: "INSERT_MEASUREMENT_ID_HERE"
+      };
+
+      // Initialize Firebase
+      const firebaseApp =firebase.initializeApp(firebaseConfig);
+
+      // Get the Firestore database and authentication instances
+      var db = getFirestore(firebaseApp);
+      var auth = firebase.auth();
+
+      // Wait for authentication state change before displaying data
+      auth.onAuthStateChanged(function(user) {
+        if (user) {
+          // User is logged in, display the table with data
+          const auth = firebase.auth();
+
+
+auth.onAuthStateChanged(user => {
+if (user) {
+const userId = firebase.auth().currentUser.uid;
+
+function getTable() {
+  const table1 = db.collection("workplaces").where("userId", "==", userId);
+
+  return table1.get().then(querySnapshot => {
+    // Create the table header
+    var tableHeader = "<tr><th>Workplace Name</th><th>Founding Date</th><th>Date Joined MoniCrop</th><th>Items Owned</th></tr>";
+    // Create the table rows
+    var tableRows = "";
+    querySnapshot.forEach(function (doc) {
+
+      var data = doc.data();
+      var row = "<tr><td>" + data.workplaceName + "</td><td>" + data.foundingDate + "</td><td>" + data.dateJoined + "</td><td>" + data.ownedItems + "</td></tr>";
+      tableRows += row;
+
+    });
+    // Combine the table header and rows
+    var tableHTML = tableHeader + tableRows;
+    // Return the HTML for the table
+    return tableHTML;
+  });
+}
+
+getTable().then(tableHTML => {
+  // Display the table in the table container
+  document.getElementById('table').innerHTML = tableHTML;
+});
+}
+});
+        } else {
+          // User is not logged in, redirect to login page
+          window.location.replace("http://localhost/MoniCrop/sign-in-page.html");
+        }
+      });
+
+      
+
+      // Sign up with email and password
+      function logout() {
+        firebase.auth().signOut()
+          .then(() => {
+            // Redirect to another page after sign out
+            window.location.href = "http://localhost/MoniCrop/landing-page.html";
+          })
+          .catch(error => {
+            // Handle errors
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorCode, errorMessage);
+          });
+      }
+    </script>
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <style>
+            table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-left: 5%;
+        margin-top:20%;
+      }
+
+      th, td {
+        text-align: left;
+        padding: 8px;
+        border: 1px solid #ddd;
+      }
+
+ 
+
+      th {
+        background-color: #f2f2f2;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div>
+      <link href="./workplace-details-page.css" rel="stylesheet" />
+
+      <div class="workplace-details-page-container">
+        <div class="workplace-details-page-view1-workplace-details-page">
+          <table id="table"> </table>
+          <span class="workplace-details-page-text H1">
+            <span>Workplace Details</span>
+          </span>
+          <img
+            alt="MoniCrop201255"
+            src="public/playground_assets/monicrop201255-do7j-200h.png"
+            class="workplace-details-page-moni-crop20"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

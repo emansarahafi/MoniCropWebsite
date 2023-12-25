@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <title>Feedback Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    <script>
+      // Firebase configuration
+      const firebaseConfig = {
+        apiKey: "INSERT_API_KEY_HERE",
+        authDomain: "INSERT_AUTH_DOMAIN_HERE",
+        projectId: "INSERT_PROJECT_ID_HERE",
+        storageBucket: "INSERT_STORAGE_BUCKET_HERE",
+        messagingSenderId: "INSERT_MESSAGING_SENDER_ID_HERE",
+        appId: "INSERT_APP_ID_HERE",
+        measurementId: "INSERT_MEASUREMENT_ID_HERE"
+      };
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      var db = firebase.firestore();
+
+      const botToken = 'INSERT_BOT_TOKEN_HERE';
+      const channelId = 'INSERT_CHANNEL_ID_HERE';
+
+      // Function to send message to Telegram channel
+      async function sendMessageToChannel(message) {
+        try {
+          const response = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              chat_id: channelId,
+              text: message
+            })
+          });
+          const data = await response.json();
+          if (data.ok) {
+            console.log('Message sent to Telegram channel');
+          } else {
+            console.error('Error sending message to Telegram channel');
+          }
+        } catch (error) {
+          console.error(error);
+        }
+      }
+
+      // Add Feedback to Telegram
+      function submitForm(event) {
+        event.preventDefault(); // prevent the form from submitting normally
+        var email = document.getElementById("emailAddress").value;
+        var message = document.getElementById("feedbackSection").value;
+        var uid = firebase.auth().currentUser.uid; // get the current user's ID
+        db.collection("feedback").add({
+          email: email,
+          message: message,
+          uid: uid // add the user ID to the collection
+        })
+        .then(function(docRef) {
+          console.log("Document written with ID: ", docRef.id);
+          // Send the feedback message to Telegram channel
+          sendMessageToChannel(`New feedback received:\nEmail: ${email}\nMessage: ${message}`);
+          alert("Message submitted successfully!");
+          window.location.href = "http://localhost/MoniCrop/feedback-received-page.html";
+        })
+        .catch(function(error) {
+          console.error("Error adding document: ", error);
+          alert("Error submitting message.");
+        });
+      }
+    </script>
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div>
+      <link href="./customer-feedback-page.css" rel="stylesheet" />
+  
+      <div class="customer-feedback-page-container">
+        <div class="customer-feedback-page-view1-customer-feedback-page">
+          <form onsubmit="submitForm(event)">
+            <div class="customer-feedback-page-inputfield-filled-off">
+              <span class="customer-feedback-page-text">
+                <span>Feedback or Complaint</span>
+              </span>
+              <textarea
+                id="feedbackSection"
+                name="commentsection"
+                placeholder="Input text"
+                class="customer-feedback-page-text-input"
+              ></textarea>
+            </div>
+            <div class="customer-feedback-page-inputfield-filled-off1">
+              <span class="customer-feedback-page-text2">
+                <span>Email Address:</span>
+              </span>
+              <input
+                id="emailAddress"
+                type="email"
+                name="email"
+                placeholder="Input text"
+                class="customer-feedback-page-text-input1"
+              />
+            </div>
+            
+            <span class="customer-feedback-page-text4 H1">
+              <span>Customer Feedback</span>
+            </span>
+            <button
+              class="customer-feedback-page-button-primary-off-off"
+              type="submit"
+              name="submit"
+              >
+              <span class="customer-feedback-page-text6">Submit</span>
+            </button>
+            <img
+              alt="MoniCrop151255"
+              src="public/playground_assets/monicrop151255-ly2-200h.png"
+              class="customer-feedback-page-moni-crop15"
+            />
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,105 @@
+.landing-page-container {
+  min-height: 100vh;
+}
+.landing-page-view-landing-page {
+  width: 100%;
+  height: 840px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+}
+.landing-page-button-primary-off-off {
+  top: 651px;
+  left: 795px;
+  width: 192px;
+  display: flex;
+  padding: 13px 24px;
+  overflow: hidden;
+  position: absolute;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: transparent;
+  border-radius: 6px;
+  justify-content: center;
+  background-color: var(--dl-color-default-green);
+}
+.landing-page-text {
+  color: rgba(238, 241, 244, 1);
+  height: auto;
+  font-size: 16px;
+  align-self: auto;
+  font-style: Bold;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: 22px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.landing-page-button-primary-off-off1 {
+  left: 449px;
+  width: 192px;
+  bottom: 142px;
+  height: 48px;
+  display: flex;
+  padding: 13px 24px;
+  overflow: hidden;
+  position: absolute;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: transparent;
+  border-radius: 6px;
+  justify-content: center;
+  background-color: var(--dl-color-default-green);
+}
+.landing-page-text2 {
+  color: var(--dl-color-default-white);
+  height: auto;
+  font-size: 16px;
+  align-self: auto;
+  font-style: Bold;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: 22px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.landing-page-text4 {
+  top: 523px;
+  left: 229px;
+  color: var(--dl-color-default-black);
+  width: 991px;
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: center;
+  line-height: 22px;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.landing-page-moni-crop23 {
+  top: 3px;
+  left: 451px;
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  border-color: transparent;
+}
+
+.flexBox {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+.child {
+  flex: 1 !important;
+}

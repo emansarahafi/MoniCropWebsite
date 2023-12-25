@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <title>Account Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script>
+      // Firebase configuration
+      const firebaseConfig = {
+        apiKey: "INSERT_API_KEY_HERE",
+        authDomain: "INSERT_AUTH_DOMAIN_HERE",
+        projectId: "INSERT_PROJECT_ID_HERE",
+        storageBucket: "INSERT_STORAGE_BUCKET_HERE",
+        messagingSenderId: "INSERT_MESSAGING_SENDER_ID_HERE",
+        appId: "INSERT_APP_ID_HERE",
+        measurementId: "INSERT_MEASUREMENT_ID_HERE"
+      };
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+
+      // Sign up with email and password
+      function logout() {
+        firebase.auth().signOut()
+          .then(() => {
+            // Redirect to another page after sign out
+            window.location.href = "http://localhost/MoniCrop/landing-page.html";
+          })
+          .catch(error => {
+            // Handle errors
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorCode, errorMessage);
+          });
+      }
+
+      // Display user email
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          document.getElementById("user-email").textContent = user.email;
+        }
+      });
+    </script>
+    
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div>
+      <link href="./account-page.css" rel="stylesheet" />
+
+      <div class="account-page-container">
+        <div class="account-page-view-account-page">
+          <button onclick="window.location.href='http://localhost/MoniCrop/edit-account-page.html'" class="account-page-button-primary-off-off">
+            <span class="account-page-text">
+              <span>Edit Personal Information</span>
+            </span>
+          </button>
+          <button onclick="window.location.href='http://localhost/MoniCrop/main-page.html'" class="account-page-button-primary-off-off1">
+            <span class="account-page-text02">
+              <span>Back to Main Page</span>
+            </span>
+          </button>
+          <button onclick="logout()" class="account-page-button-primary-off-off2">
+            <span class="account-page-text04">
+              <span>Log Out</span>
+            </span>
+          </button>
+          <span class="account-page-text06 H1"><span>Account</span></span>
+          <span class="account-page-text08 H2">
+            <span id="user-email"></span>
+          </span>
+          <img
+            alt="MoniCrop121255"
+            src="public/playground_assets/monicrop121255-hp5b-300h.png"
+            class="account-page-moni-crop12"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

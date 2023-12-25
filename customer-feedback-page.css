@@ -1,0 +1,199 @@
+.customer-feedback-page-container {
+  min-height: 100vh;
+}
+.customer-feedback-page-view1-customer-feedback-page {
+  width: 100%;
+  height: 840px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+}
+.customer-feedback-page-inputfield-filled-off {
+  top: 507px;
+  left: 97px;
+  width: 1181px;
+  height: 74px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.customer-feedback-page-text {
+  color: var(--dl-color-default-black);
+  height: auto;
+  font-size: 14px;
+  align-self: auto;
+  font-style: Regular;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: 22px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 4px;
+  text-decoration: none;
+}
+.customer-feedback-page-text-input {
+  color: rgba(0, 0, 0, 1);
+  width: 100%;
+  height: 201px;
+  display: flex;
+  padding: 12px;
+  position: relative;
+  font-size: 16px;
+  align-self: stretch;
+  text-align: left;
+  align-items: center;
+  flex-shrink: 0;
+  font-family: Inter;
+  font-weight: 400;
+  border-color: rgba(0, 0, 0, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 6px;
+  background-color: var(--dl-color-default-white);
+}
+.customer-feedback-page-inputfield-filled-off1 {
+  top: 250px;
+  left: 96px;
+  width: 1181px;
+  height: 74px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.customer-feedback-page-text2 {
+  color: var(--dl-color-default-black);
+  height: auto;
+  font-size: 14px;
+  align-self: auto;
+  font-style: Regular;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: 22px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 4px;
+  text-decoration: none;
+}
+.customer-feedback-page-text-input1 {
+  color: rgba(0, 0, 0, 1);
+  width: 1181px;
+  height: 48px;
+  display: flex;
+  padding: 12px;
+  position: relative;
+  font-size: 16px;
+  align-self: stretch;
+  text-align: left;
+  align-items: center;
+  flex-shrink: 0;
+  font-family: Inter;
+  font-weight: 400;
+  border-color: rgba(0, 0, 0, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 6px;
+  background-color: var(--dl-color-default-white);
+}
+.customer-feedback-page-text4 {
+  top: 129px;
+  left: 474px;
+  color: var(--dl-color-default-green);
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 48px;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.customer-feedback-page-button-primary-off-off {
+  top: 636px;
+  left: 612px;
+  width: 204px;
+  display: flex;
+  padding: 13px 24px;
+  overflow: hidden;
+  position: absolute;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: transparent;
+  border-radius: 6px;
+  justify-content: center;
+  background-color: var(--dl-color-default-green);
+}
+.customer-feedback-page-text6 {
+  color: rgb(238, 241, 244);
+  height: auto;
+  font-size: 16px;
+  align-self: auto;
+  font-style: Bold;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: 22px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.customer-feedback-page-button-primary-off-off1 {
+  left: 613px;
+  width: 202px;
+  bottom: 87px;
+  display: flex;
+  padding: 13px 24px;
+  overflow: hidden;
+  position: absolute;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: transparent;
+  border-radius: 6px;
+  justify-content: center;
+  background-color: var(--dl-color-default-green);
+}
+.customer-feedback-page-text7 {
+  color: rgba(238, 241, 244, 1);
+  height: auto;
+  font-size: 16px;
+  align-self: auto;
+  font-style: Bold;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: 22px;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.customer-feedback-page-moni-crop15 {
+  top: 2px;
+  left: 13px;
+  width: 207px;
+  height: 181px;
+  position: absolute;
+  border-color: transparent;
+}
+
+.flexBox {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+.child {
+  flex: 1 !important;
+}
