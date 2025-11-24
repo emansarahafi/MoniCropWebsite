@@ -2,9 +2,11 @@
 
 A web application for monitoring crops through collected data stored in Firebase. MoniCrop enables users to track crop health, visualize data trends, manage workplace information, and provide feedback.
 
-![COSC 348   CMPE 495A Wireframes (3)](https://github.com/emansarahafi/MoniCropWebsite/assets/85173630/da259ddb-8702-4bd4-9bc2-c5d18071583c)
-
 ## Features
+
+[View interactive prototype on Figma](https://www.figma.com/proto/tVz1lMvEEfc3UZvJ6FqLNd/COSC-348---CMPE-495A-Wireframes?node-id=1724-4579&p=f&t=abFzbCURSv0wED8h-1&scaling=scale-down&content-scaling=fixed&page-id=1255%3A9069&starting-point-node-id=1724%3A4579)
+
+![COSC 348   CMPE 495A Wireframes (3)](https://github.com/emansarahafi/MoniCropWebsite/assets/85173630/da259ddb-8702-4bd4-9bc2-c5d18071583c)
 
 - **User Authentication**: Sign up, sign in, password reset, and account management
 - **Data Visualization**: Interactive charts for soil and crop data using Chart.js
@@ -94,7 +96,6 @@ The project includes a GitHub Actions workflow for automated deployment. Configu
 ### CSS Architecture
 
 - **4-layer loading**: common → components → patterns (forms/layouts) → page-specific
-- **530 lines of shared styles** eliminate ~1200+ lines of duplication
 - All CSS variables centralized in `common.css`
 
 ### JavaScript Architecture  
@@ -112,17 +113,29 @@ The project includes a GitHub Actions workflow for automated deployment. Configu
 - **Data Pages**: View data charts, search results, workplace details
 - **Feedback**: Submit and receive feedback confirmation
 
-## Contributing
+## Related Projects
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+This website is part of the **MoniCrop Smart Crop Monitoring System**:
 
-## License
+- **[MoniCrop Hardware](https://github.com/emansarahafi/MoniCropHardware/tree/main)** - IoT sensors and hardware components
+- **[MoniCrop iOS App](https://github.com/emansarahafi/MoniCropiOS)** - Mobile application for iOS
 
-This project is part of COSC 348 / CMPE 495A coursework.
+## Citation
+
+If you use this work, please cite:
+
+```bibtex
+@article{Afi2023,
+  author = "Eman Sarah Afi",
+  title = "{Development of a Smart Crop Monitoring System}",
+  year = "2023",
+  month = "10",
+  url = "https://aubh.figshare.com/articles/thesis/_b_Development_of_a_Smart_Crop_Monitoring_System_b_/30580751",
+  doi = "10.58014/aubh.24314056.v2"
+}
+```
+
+**Published thesis**: [Development of a Smart Crop Monitoring System](https://aubh.figshare.com/articles/thesis/_b_Development_of_a_Smart_Crop_Monitoring_System_b_/30580751) (DOI: 10.58014/aubh.24314056.v2)
 
 ## Acknowledgments
 
