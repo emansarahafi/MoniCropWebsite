@@ -127,7 +127,7 @@ The project includes a GitHub Actions workflow for automated deployment. Configu
 
 This website is part of the **MoniCrop Smart Crop Monitoring System**:
 
-- **[MoniCrop Hardware](https://github.com/emansarahafi/MoniCropHardware/tree/main)** - IoT sensors and hardware components
+- **[MoniCrop Hardware](https://github.com/emansarahafi/MoniCropHardware)** - IoT sensors and hardware components
 - **[MoniCrop iOS App](https://github.com/emansarahafi/MoniCropiOS)** - Mobile application for iOS
 
 ## Citation
