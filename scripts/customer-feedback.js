@@ -1,8 +1,8 @@
 // customer feedback logic
 async function sendMessageToChannel(message) {
   try {
-    const botToken = process.env.TELEGRAM_BOT_TOKEN || 'INSERT_BOT_TOKEN_HERE';
-    const channelId = process.env.TELEGRAM_CHANNEL_ID || 'INSERT_CHANNEL_ID_HERE';
+    const botToken = 'INSERT_BOT_TOKEN_HERE';
+    const channelId = 'INSERT_CHANNEL_ID_HERE';
     const response = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
