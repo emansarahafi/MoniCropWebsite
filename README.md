@@ -15,6 +15,16 @@ A web application for monitoring crops through collected data stored in Firebase
 - **Feedback System**: Integrated Telegram bot for user feedback
 - **Responsive Design**: Clean, modern UI with organized component architecture
 
+## Documentation
+
+### UML Use Case Diagram
+
+![UML Use Case Diagram](https://via.placeholder.com/800x600?text=UML+Use+Case+Diagram+Placeholder)
+
+### Entity-Relationship Diagram
+
+![ER Diagram](https://via.placeholder.com/800x600?text=ER+Diagram+Placeholder)
+
 ## Tech Stack
 
 - **Frontend**: HTML5, CSS3, JavaScript (ES6+)
