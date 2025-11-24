@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <title>Forgot Your Password?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="../scripts/firebase-init.js"></script>
+    <script src="../scripts/utils.js"></script>
+    <script src="../scripts/disable-delete-account.js" defer></script>
+
+    <link rel="stylesheet" href="../styles/common.css" />
+    <link rel="stylesheet" href="../styles/components.css" />
+    <link rel="stylesheet" href="../styles/disable-delete-account-page.css" />
+  </head>
+  <body>
+    <div>
+
+      <div class="disable-delete-account-page-container">
+        <div class="disable-delete-account-page-view-disable-delete-account-page">
+          <a class="child" href="search-results-page.html">
+            <img
+            alt="Iconssearch1255"
+            src="../assets/icons/iconssearch1255-n1w.svg"
+            class="disable-delete-account-page-iconssearch" />
+          </a>
+          <a class="child" href="account-page.html">
+            <img
+            alt="Iconsuser1255"
+            src="../assets/icons/iconsuser1255-lttj.svg"
+            class="disable-delete-account-page-iconsuser" />
+          </a>
+          <a class="child" href="customer-feedback-page.html">
+            <img
+            alt="Iconsfrown1255"
+            src="../assets/icons/iconsfrown1255-c1c.svg"
+            class="disable-delete-account-page-iconsfrown" />
+          </a>
+          <a class="child" href="#" onclick="logout()">
+            <img
+              alt="Iconslogout1255"
+              src="../assets/icons/iconslogout1255-6f3v.svg"
+              class="disable-delete-account-page-iconslogout"
+            />
+          </a>
+          <img
+            alt="MoniCrop231255"
+            src="../assets/images/monicrop231255-ak-500h.png"
+            class="disable-delete-account-page-moni-crop16"
+          />
+          <span class="disable-delete-account-page-text H1">
+            <span>Disable / Delete Account</span>
+          </span>
+          <button onclick="window.location.href='main-page.html'" class="disable-delete-account-page-button-primary-off-off">
+            <span class="disable-delete-account-page-text02">
+              <span>Back to Main Page</span>
+            </span>
+          </button>
+          
+          <button class="disable-delete-account-page-button-primary-off-off1" onclick="handleAccountOption()">
+            <span class="disable-delete-account-page-text04">
+              <span>Submit</span>
+            </span>
+          </button>
+          <label class="disable-delete-account-page-radiobutton-state2">
+            <input type="radio" name="account-option" value="delete">
+            Delete
+          </label>
+          <label class="disable-delete-account-page-radiobutton-state21">
+            <input type="radio" name="account-option" value="disable">
+            Disable
+          </label>
+          <div class="disable-delete-account-page-inputfield-filled-on">
+            <span class="disable-delete-account-page-text06">
+              <span>Please enter the password to confirm:</span>
+            </span>
+            <div class="disable-delete-account-page-text-input">
+              <span class="disable-delete-account-page-text08">
+                <input 
+                  type="password" 
+                  placeholder="Input text" 
+                  class="edit-account-page-text-input8" 
+                  id="password-input"
+                >
+              </span>
+            </div>
+          </div>
+          <span class="disable-delete-account-page-text10">
+            <span>Choose an option:</span>
+          </span>
+          <span class="disable-delete-account-page-text15 Body">
+            <span>
+              <span>Kindly note that if you choose:</span>
+              <br />
+              <span>
+                Disable: The account will be disabled &amp; the user can
+                reactivate it at any moment by logging again.
+              </span>
+              <br />
+              <span>
+                Delete: The account will be deleted instantly.
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+/* Shared Layout for Data Pages (search-results, workplace-details, view-data) */
+
+.data-page-container {
+  min-height: 100vh;
+}
+
+/* Navigation Icons - Standard positioning */
+.nav-icon-user {
+  top: 42px;
+  left: 90px;
+}
+
+.nav-icon-search {
+  top: 42px;
+  right: 157px;
+}
+
+.nav-icon-logout {
+  top: 42px;
+  right: 112px;
+}
+
+.nav-icon-feedback {
+  top: 42px;
+  right: 202px;
+}
+
+/* Data table specific styles */
+.data-table {
+  margin: 0 auto;
+  width: 80%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.data-table th {
+  background-color: var(--dl-color-default-green);
+  color: var(--dl-color-default-white);
+  padding: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.data-table td {
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.data-table tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.data-table tr:hover {
+  background-color: rgba(148, 178, 2, 0.1);
+}

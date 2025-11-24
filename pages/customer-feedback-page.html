@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <title>Feedback Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    <script src="../scripts/firebase-init.js"></script>
+    <script src="../scripts/utils.js"></script>
+    <script src="../scripts/customer-feedback.js" defer></script>
+
+    <link rel="stylesheet" href="../styles/common.css" />
+    <link rel="stylesheet" href="../styles/components.css" />
+    <link rel="stylesheet" href="../styles/forms.css" />
+    <link rel="stylesheet" href="../styles/customer-feedback-page.css" />
+  </head>
+  <body>
+    <div>
+  
+      <div class="customer-feedback-page-container">
+        <div class="customer-feedback-page-view1-customer-feedback-page">
+          <form onsubmit="submitForm(event)">
+            <div class="customer-feedback-page-inputfield-filled-off">
+              <span class="customer-feedback-page-text">
+                <span>Feedback or Complaint</span>
+              </span>
+              <textarea
+                id="feedbackSection"
+                name="commentsection"
+                placeholder="Input text"
+                class="customer-feedback-page-text-input"
+              ></textarea>
+            </div>
+            <div class="customer-feedback-page-inputfield-filled-off1">
+              <span class="customer-feedback-page-text2">
+                <span>Email Address:</span>
+              </span>
+              <input
+                id="emailAddress"
+                type="email"
+                name="email"
+                placeholder="Input text"
+                class="customer-feedback-page-text-input1"
+              />
+            </div>
+            
+            <span class="customer-feedback-page-text4 H1">
+              <span>Customer Feedback</span>
+            </span>
+            <button
+              class="customer-feedback-page-button-primary-off-off"
+              type="submit"
+              name="submit"
+              >
+              <span class="customer-feedback-page-text6">Submit</span>
+            </button>
+            <img
+              alt="MoniCrop151255"
+              src="../assets/images/monicrop231255-ak-500h.png"
+              class="customer-feedback-page-moni-crop15"
+            />
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

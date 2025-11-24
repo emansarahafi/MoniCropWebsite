@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <title>Sign Up</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    <script src="../scripts/firebase-init.js"></script>
+    <script src="../scripts/utils.js"></script>
+    <script src="../scripts/sign-up.js" defer></script>
+    <script>
+      // Removed duplicate firebase initialization
+    
+      function signUp() {
+        const email = document.getElementById('emailInput').value;
+        const password = document.getElementById('passwordInput').value;
+        const confirmPassword = document.getElementById('confirmPasswordInput').value;
+        const accountType = document.getElementById('accountTypeInput').value;
+        const dob = document.getElementById('dobInput').value;
+        const firstName = document.getElementById('firstNameInput').value;
+        const middleName = document.getElementById('middleNameInput').value;
+        const lastName = document.getElementById('lastNameInput').value;
+        const workplaceName = document.getElementById('workplaceNameInput').value;
+        const position = document.getElementById('positionInput').value;
+
+        if (password !== confirmPassword) {
+          // Password and Confirm Password do not match
+          alert("Password and Confirm Password do not match.");
+          return;
+        }
+
+        firebase.auth().createUserWithEmailAndPassword(email, password)
+          .then(userCredential => {
+            // Save user information to Firestore collection
+            const user = {
+              email: email,
+              accountType: accountType,
+              dob: dob,
+              firstName: firstName,
+              middleName: middleName,
+              lastName: lastName,
+              workplaceName: workplaceName,
+              position: position
+            };
+
+            const usersCollection = firebase.firestore().collection("users");
+            usersCollection.doc(userCredential.user.uid).set(user)
+              .then(() => {
+                // Redirect to another page after sign up
+                window.location.href = "http://localhost/MoniCrop/main-page.html";
+              })
+              .catch(error => {
+                // Handle errors
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.log(errorCode, errorMessage);
+              });
+          })
+          .catch(error => {
+            // Handle errors
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorCode, errorMessage);
+          });
+      }
+    </script>   
+
+
+    <link rel="stylesheet" href="../styles/common.css" />
+    <link rel="stylesheet" href="../styles/components.css" />
+    <link rel="stylesheet" href="../styles/forms.css" />
+    <link rel="stylesheet" href="../styles/sign-up-page.css" />
+  </head>
+  <body>
+    <div>
+      <link href="./sign-up-page.css" rel="stylesheet" />
+
+      <div class="sign-up-page-container">
+        <div class="sign-up-page-view-sign-up-page1">
+          <span class="sign-up-page-text H1"><span>Sign Up</span></span>
+          <div class="sign-up-page-inputfield-filled-off">
+            <span class="sign-up-page-text02"><span>Email Address:</span></span>
+            <input
+              id="emailInput"
+              type="email"
+              placeholder="Input text"
+              class="sign-up-page-text-input"
+            />
+          </div>
+          <button class="sign-up-page-button-primary-off-off" onclick="window.location.href='sign-in-page.html'">
+            <span class="sign-up-page-text04">
+              <span>Sign In Instead</span>
+            </span>
+          </button>
+          <div class="sign-up-page-inputfield-filled-off01">
+            <span class="sign-up-page-text06"><span>Position</span></span>
+            <input
+              id ="positionInput"
+              type="text"
+              placeholder="Input text"
+              class="sign-up-page-text-input01"
+            />
+          </div>
+          <div class="sign-up-page-inputfield-filled-off03">
+            <span class="sign-up-page-text09"><span>Workplace Name</span></span>
+            <input
+              id ="workplaceNameInput"
+              type="text"
+              placeholder="Input text"
+              class="sign-up-page-text-input03"
+            />
+          </div>
+          <div class="sign-up-page-inputfield-filled-off04">
+            <span class="sign-up-page-text11"><span>First Name</span></span>
+            <input
+              id ="firstNameInput"
+              type="text"
+              placeholder="Input text"
+              class="sign-up-page-text-input04"
+            />
+          </div>
+          <div class="sign-up-page-inputfield-filled-off05">
+            <span class="sign-up-page-text13"><span>Middle Name</span></span>
+            <input
+              id ="middleNameInput"
+              type="text"
+              placeholder="Input text"
+              class="sign-up-page-text-input05"
+            />
+          </div>
+          <div class="sign-up-page-inputfield-filled-off06">
+            <span class="sign-up-page-text15"><span>Last Name</span></span>
+            <input
+              id ="lastNameInput"
+              type="text"
+              placeholder="Input text"
+              class="sign-up-page-text-input06"
+            />
+          </div>
+          <button onclick="signUp()" class="sign-up-page-button-primary-off-off1">
+            <span class="sign-up-page-text17"><span>Sign Up</span></span>
+          </button>
+          <div class="sign-up-page-dropdown-closed">
+            <span class="sign-up-page-text19"><span>Account Type</span></span>
+            <div class="sign-up-page-text-input07">
+              <select name="account-type" id="accountTypeInput">
+                <option value="Business Owner">Business Owner</option>
+                <option value="Farm Owner">Farm Owner</option>
+              </select>
+            </div>
+          </div>
+          <img
+            alt="MoniCrop91255"
+            src="../assets/images/monicrop231255-ak-500h.png"
+            class="sign-up-page-moni-crop9"
+          />
+          <div class="sign-up-page-inputfield-filled-off07">
+            <span class="sign-up-page-text23">Password:</span>
+            <input
+              id ="passwordInput"
+              type="password"
+              placeholder="Input text"
+              class="sign-up-page-text-input08"
+            />
+          </div>
+          <div class="sign-up-page-inputfield-filled-off08">
+            <span class="sign-up-page-text24">Confirm Password:</span>
+            <input
+              id="confirmPasswordInput"
+              type="password"
+              placeholder="Input text"
+              class="sign-up-page-text-input09"
+            />
+          </div>
+          <div class="sign-up-page-inputfield-filled-off09">
+            <span class="sign-up-page-text25">Date of Birth:</span>
+            <input
+              id ="dobInput"
+              type="date"
+              placeholder="Input text"
+              class="sign-up-page-text-input10"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

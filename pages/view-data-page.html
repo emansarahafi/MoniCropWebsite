@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <title>View Data</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@^3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@^2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment@^1"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.4.0/firebase-database.js"></script>
+    <script type="module" src="../scripts/view-data.js"></script>
+
+    <link rel="stylesheet" href="../styles/common.css" />
+    <link rel="stylesheet" href="../styles/components.css" />
+    <link rel="stylesheet" href="../styles/layouts.css" />
+    <link rel="stylesheet" href="../styles/view-data-page.css" />
+  </head>
+  <body>
+    <div>
+
+      <div class="view-data-page-container">
+        <div class="view-data-page-view1-view-data-page1">
+          <div class="view-data-page-dropdown">
+            <span class="view-data-page-text">Select ID of item</span>
+            <div class="view-data-page-text-input">
+              <select id="id-dropdown">
+                <option value="">Select ID of item</option>
+              </select>
+            </div>
+          </div>
+          <div class="view-data-page-dropdown1">
+            <span class="view-data-page-text04">
+              <span>Select item to view</span>
+            </span>
+            <div class="view-data-page-text-input1">
+              <select id="fruits-dropdown">
+                <option value="">Select an item</option>
+              </select>
+            </div>
+          </div>
+          <button class="view-data-page-button-primary-off-off">
+            <span class="view-data-page-text02"><span>Enter</span></span>
+          </button>
+          <img
+            alt="MoniCrop191255"
+            src="../assets/images/monicrop231255-ak-500h.png"
+            class="view-data-page-moni-crop19"
+          />
+          <div class="my-container">
+            <canvas id="line-chart"></canvas>
+          </div>
+          <div class="view-data-page-dropdown2">
+            <span class="view-data-page-text08">
+              <span>Select data to view</span>
+            </span>
+            <div class="view-data-page-text-input2">
+              <select id="data-type-dropdown">
+                <option value="">Select data to view</option>
+                <option value="pH">pH Level</option>
+                <option value="Moisture">Moisture Level</option>
+                <option value="Conductivity">Conductivity Level</option>
+                <option value="Growth Rate">Growth Rate Level</option>
+                <option value="Nitrogen">Nitrogen Level</option>
+                <option value="Phosphorus">Phosphorus Level</option>
+                <option value="Potassium">Potassium Level</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

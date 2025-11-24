@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <title>Welcome Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="../scripts/firebase-init.js"></script>
+    <script src="../scripts/utils.js"></script>
+    <script src="../scripts/main-page.js" defer></script>
+
+    <link rel="stylesheet" href="../styles/common.css" />
+    <link rel="stylesheet" href="../styles/components.css" />
+    <link rel="stylesheet" href="../styles/main-page.css" />
+  </head>
+  <body>
+    <div>
+
+      <div class="main-page-container">
+        <div class="main-page-view-main-page">
+          <div class="flexBox">
+            <a class="child" href="search-results-page.html">
+              <img
+                alt="Iconssearch1255"
+                src="../assets/icons/iconssearch1255-n1w.svg"
+                class="main-page-iconssearch" />
+            </a>
+            <a class="child" href="account-page.html">
+              <img
+              alt="Iconsuser1255"
+              src="../assets/icons/iconsuser1255-lttj.svg"
+              class="main-page-iconsuser" />
+            </a>
+            <a class="child" href="customer-feedback-page.html">
+              <img
+              alt="Iconsfrown1255"
+              src="../assets/icons/iconsfrown1255-c1c.svg"
+              class="main-page-iconsfrown" />
+            </a>
+            <a class="child" href="#" onclick="logout()">
+              <img 
+              alt="Iconslogout1255" 
+              src="../assets/icons/iconslogout1255-6f3v.svg" 
+              class="main-page-iconslogout" />
+            </a>
+          </div>
+          <span class="main-page-text H1"><span>Main Page</span></span>
+          <button onclick="window.location.href='view-data-page.html'" class="main-page-button-primary-off-off">
+            <span class="main-page-text2"><span>View Data</span></span>
+          </button>
+          <button onclick="window.location.href='workplace-details-page.html'" class="main-page-button-primary-off-off1">
+            <span class="main-page-text4">
+              <span>View Workplace Details</span>
+            </span>
+          </button>
+          <button onclick="window.location.href='https://www.canva.com/design/DAFOn23KpfE/Eueuve2e40uBRa0V7cRz9w/view?utm_content=DAFOn23KpfE&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink'" class="main-page-button-primary-off-off2">
+            <span class="main-page-text6">
+              <span>View Brochure (PDF)</span>
+            </span>
+          </button>
+          <button onclick="window.location.href='https://t.me/MoniCropFeedback'" class="main-page-button-primary-off-off3">
+            <span class="main-page-text8">Access Telegram Channel</span>
+          </button>
+            <img
+            alt="MoniCrop231255"
+            src="../assets/images/monicrop231255-ak-500h.png"
+            class="main-page-moni-crop22"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

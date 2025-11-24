@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <title>Account Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="../scripts/firebase-init.js"></script>
+    <script src="../scripts/utils.js"></script>
+    <script src="../scripts/account-page.js" defer></script>
+    
+    <link rel="stylesheet" href="../styles/common.css" />
+    <link rel="stylesheet" href="../styles/components.css" />
+    <link rel="stylesheet" href="../styles/account-page.css" />
+  </head>
+  <body>
+    <div>
+
+      <div class="account-page-container">
+        <div class="account-page-view-account-page">
+          <button onclick="window.location.href='edit-account-page.html'" class="account-page-button-primary-off-off">
+            <span class="account-page-text">
+              <span>Edit Personal Information</span>
+            </span>
+          </button>
+          <button onclick="window.location.href='main-page.html'" class="account-page-button-primary-off-off1">
+            <span class="account-page-text02">
+              <span>Back to Main Page</span>
+            </span>
+          </button>
+          <button onclick="logout()" class="account-page-button-primary-off-off2">
+            <span class="account-page-text04">
+              <span>Log Out</span>
+            </span>
+          </button>
+          <span class="account-page-text06 H1"><span>Account</span></span>
+          <span class="account-page-text08 H2">
+            <span id="user-email"></span>
+          </span>
+          <img
+            alt="MoniCrop121255"
+            src="../assets/images/monicrop231255-ak-500h.png"
+            class="account-page-moni-crop12"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
