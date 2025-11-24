@@ -19,11 +19,11 @@ A web application for monitoring crops through collected data stored in Firebase
 
 ### UML Use Case Diagram
 
-![UML Use Case Diagram](https://via.placeholder.com/800x600?text=UML+Use+Case+Diagram+Placeholder)
+![UML Use Case Diagram](https://github.com/user-attachments/assets/b25a0a8c-9f46-4056-89bc-1d62d04136fc)
 
 ### Entity-Relationship Diagram
 
-![ER Diagram](https://via.placeholder.com/800x600?text=ER+Diagram+Placeholder)
+![ER Diagram](https://github.com/user-attachments/assets/f4285c60-7ebf-481f-9d11-fb9462306c7e)
 
 ## Tech Stack
 
