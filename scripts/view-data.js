@@ -1,6 +1,6 @@
 // view-data page logic
 // Firebase is initialized in firebase-init.js
-const db = firebase.firestore();
+const db = window.appUtils.db.get();
 const logout = () => window.appUtils.auth.logout();
 window.logout = logout;
 
