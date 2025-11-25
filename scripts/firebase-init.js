@@ -10,6 +10,16 @@ const firebaseConfig = {
   measurementId: "INSERT_MEASUREMENT_ID_HERE"
 };
 
-if (window.firebase && !firebase.apps.length) {
-  firebase.initializeApp(firebaseConfig);
+// Initialize Firebase
+if (typeof firebase !== 'undefined' && firebase.apps && !firebase.apps.length) {
+  try {
+    firebase.initializeApp(firebaseConfig);
+    console.log('Firebase initialized successfully');
+  } catch (error) {
+    console.error('Firebase initialization error:', error);
+  }
+} else if (typeof firebase === 'undefined') {
+  console.error('Firebase SDK not loaded');
+} else if (firebase.apps.length > 0) {
+  console.log('Firebase already initialized');
 }
