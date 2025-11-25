@@ -38,14 +38,14 @@ const validation = {
   getInputValue: (id) => document.getElementById(id)?.value || ''
 };
 
-// Firestore helpers
-const db = {
+// Firestore helpers - exported via window.appUtils.db
+const firestoreHelpers = {
   get: () => firebase.firestore ? firebase.firestore() : null,
   
-  collection: (name) => db.get().collection(name)
+  collection: (name) => firestoreHelpers.get().collection(name)
 };
 
 // Export for use in other scripts
 if (typeof window !== 'undefined') {
-  window.appUtils = { navigate, auth, validation, db };
+  window.appUtils = { navigate, auth, validation, db: firestoreHelpers };
 }
