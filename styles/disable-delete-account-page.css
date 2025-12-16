@@ -60,28 +60,28 @@
   margin-bottom: 0;
   text-decoration: none;
 }
-.disable-delete-account-page-iconssearch {
+.disable-delete-account-page-search {
   top: 42px;
   right: 76px;
   width: 24px;
   height: 24px;
   position: absolute;
 }
-.disable-delete-account-page-iconsuser {
+.disable-delete-account-page-user {
   top: 42px;
   right: 40px;
   width: 24px;
   height: 24px;
   position: absolute;
 }
-.disable-delete-account-page-iconsfrown {
+.disable-delete-account-page-frown {
   top: 42px;
   right: 112px;
   width: 24px;
   height: 24px;
   position: absolute;
 }
-.disable-delete-account-page-iconslogout {
+.disable-delete-account-page-logout {
   top: 42px;
   right: 148px;
   width: 24px;
@@ -218,7 +218,7 @@
   margin-bottom: 0;
   text-decoration: none;
 }
-.disable-delete-account-page-iconseye {
+.disable-delete-account-page-eye {
   top: 12px;
   left: 1011px;
   width: 24px;

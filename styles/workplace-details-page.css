@@ -58,28 +58,28 @@ th {
   height: 0px;
   position: absolute;
 }
-.workplace-details-page-iconsfrown {
+.workplace-details-page-frown {
   top: 42px;
   right: 112px;
   width: 24px;
   height: 24px;
   position: absolute;
 }
-.workplace-details-page-iconssearch {
+.workplace-details-page-search {
   top: 42px;
   right: 76px;
   width: 24px;
   height: 24px;
   position: absolute;
 }
-.workplace-details-page-iconslogout {
+.workplace-details-page-logout {
   top: 42px;
   right: 148px;
   width: 24px;
   height: 24px;
   position: absolute;
 }
-.workplace-details-page-iconsuser {
+.workplace-details-page-user {
   top: 42px;
   right: 40px;
   width: 24px;

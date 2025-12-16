@@ -10,7 +10,7 @@
   flex-shrink: 0;
   border-color: transparent;
 }
-.main-page-iconssearch {
+.main-page-search {
   top: 42px;
   right: 76px;
   width: 24px;
@@ -29,21 +29,21 @@
   margin-right: 0;
   margin-bottom: 0;
 }
-.main-page-iconsuser {
+.main-page-user {
   top: 42px;
   right: 40px;
   width: 24px;
   height: 24px;
   position: absolute;
 }
-.main-page-iconsfrown {
+.main-page-frown {
   top: 42px;
   right: 112px;
   width: 24px;
   height: 24px;
   position: absolute;
 }
-.main-page-iconslogout {
+.main-page-logout {
   top: 42px;
   right: 148px;
   width: 24px;
